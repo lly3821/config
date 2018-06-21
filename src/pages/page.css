@@ -1,0 +1,36 @@
+ul{
+    float: left;
+    padding: 0;
+    list-style-type: none;
+    margin:0;
+}
+
+li{
+    float: left;
+    width: 21px;
+    height: 21px;
+    border:1px solid lightgrey;
+    border-radius: 3px;
+    margin: 0 3px;
+    padding:5px;
+    text-align: center
+}
+li:hover,li:active,.active{
+    background-color:#1f98fc;
+    color:#ffffff;
+}
+.pre,.next{
+    width: 58px;
+    height: 21px;
+    text-align: center;
+    padding:5px;
+    border-radius: 3px;
+    margin:0 10px 0 10px;
+    border:1px solid lightgrey
+
+}
+.nomore{
+    color:#b5b5b5;
+    width: 58px;
+    height: 21px;
+}
