@@ -7,13 +7,16 @@ class App extends Component{
         this.state = {
             current:1,
             pagesize:3,
-            total:16,
+            total:100,
         }
     }
 
     onPageChange = (page) => {
         console.log(page)
         this.setState({current:page})
+    }
+    onSizeChange = (newsize) =>{
+        this.setState({pagesize:newsize})
     }
 
     render(){
@@ -26,6 +29,7 @@ class App extends Component{
                 current = {this.state.current}
                 pagesize = {this.state.pagesize}
                 gotoCurrent = {this.onPageChange}
+                SizeChange = {this.onSizeChange}
             />
         </div>
         )
