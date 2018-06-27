@@ -36,17 +36,13 @@ class Pagination extends Component{
         const totalpage = Math.ceil(total/pagesize)
         let pages = []
 
+        pages.push(<li key={0} className={current===1?'nomore':'pre'} onClick = {this.goPrev.bind(this,prevpage)}>上一页</li>)
         if(totalpage <= 5){
-            pages.push(<li key={0} className={current===1?'nomore':'pre'} onClick = {this.goPrev.bind(this,prevpage)}>上一页</li>)
             for (let i=1 ; i<= 5 ; i++){
                 pages.push(<li className={i===current?'active':''} onClick = {this.props.gotoCurrent.bind(this,i)} key={i}>{i}</li>)
             }
-            
-            pages.push(<li key={totalpage+1} className={current===totalpage?'nomore':'next'} onClick = {this.goNext.bind(this,nextpage)}>下一页</li>)
-            return pages
         }
         else{
-            pages.push(<li key={0} className={current===1?'nomore':'pre'} onClick = {this.goPrev.bind(this,prevpage)}>上一页</li>)
             pages.push(<li key={1} className={current===1?'active':''} onClick = {this.props.gotoCurrent.bind(this,1)}>1</li>)
             if (current < 4){
                 for (let i=2; i<= 4; i++){
@@ -68,11 +64,10 @@ class Pagination extends Component{
                 }
             }
             pages.push(<li key={ totalpage } className = { current === totalpage ? 'active':''} onClick = { this.props.gotoCurrent.bind(this,totalpage) }>{ totalpage }</li>)
-            pages.push(<li key={totalpage+1} className={current===totalpage?'nomore':'next'} onClick = {this.goNext.bind(this,nextpage)}>下一页</li>)
-            return pages
         }
+        pages.push(<li key={totalpage+1} className={current===totalpage?'nomore':'next'} onClick = {this.goNext.bind(this,nextpage)}>下一页</li>)
+        return pages
     }  
-
     
     render(){
         const pages = this.createPages(this.props)

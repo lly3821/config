@@ -7,6 +7,7 @@ ul{
 .ellipsis{
     border:none ;
     margin:0 10px;
+    cursor: default;
 }
 .ellipsis:hover,.ellipsis:active,.active{
     background-color:#ffffff;
